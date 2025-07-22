@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Index</title>
+    <link
+      rel="stylesheet"
+      href="../BS/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  <script defer src="bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">FastFood</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          id="basket"
+        >
+          <img src="../../imgs/basket.svg" alt="basket" />
+        </button>
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Your Orders
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <ul class="modal-body" id="cart_body">
+                ...
+              </ul>
+              <div class="modal-footer">
+                <div class="modal-footer-btns">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    data-bs-dismiss="modal"
+                    id="confirm_order"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Confirm Order
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <ul class="list-group categories">
+      <li class="drink_container list-group-item">
+        <label for="show_prod_btn1">Drinks</label>
+        <button class="show_prod_btn" id="show_prod_btn1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-down"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </button>
+        <ul class="child-list-group open">
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="bumble"
+              data-product-name="Bumble"
+            >
+              <img
+                src="../../imgs/food/bumble.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Bumble</h5>
+                <ul class="card-text">
+                  <li>Double espresso</li>
+                  <li>Orange fresh</li>
+                  <li>Caramel syrup</li>
+                  <li>Crushed ice</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="bumble"> Price: --- </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="bumble"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="strawberry_mojito"
+              data-product-name="Strawberry mojito"
+            >
+              <img
+                src="../../imgs/food/strawberry_mojito.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Strawberry mojito</h5>
+                <ul class="card-text">
+                  <li>White rum Cubana Cultura</li>
+                  <li>Soda</li>
+                  <li>Lime</li>
+                  <li>Strawberry</li>
+                  <li>Mint</li>
+                  <li>Crushed ice</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="strawberry_mojito">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="strawberry_mojito"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="cappuccino"
+              data-product-name="Cappuccino"
+            >
+              <img
+                src="../../imgs/food/cappuccino.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cappuccino</h5>
+                <ul class="card-text">
+                  <li>Espresso</li>
+                  <li>Steamed milk</li>
+                  <li>Foam</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="cappuccino">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="cappuccino"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="breakfast_container list-group-item">
+        <label for="show_prod_btn2">Burgers and sandwiches</label>
+        <button class="show_prod_btn" id="show_prod_btn2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-down"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </button>
+        <ul class="child-list-group open">
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="english_breakfast"
+              data-product-name="English breakfast"
+            >
+              <img
+                src="../../imgs/food/english_breakfast.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">English breakfast</h5>
+                <ul class="card-text">
+                  <li>Eggs</li>
+                  <li>Tosts</li>
+                  <li>Avocado</li>
+                  <li>Spinach</li>
+                  <li>Bacon</li>
+                  <li>Sauce</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="english_breakfast">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="english_breakfast"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="sandwich"
+              data-product-name="Sandwich"
+            >
+              <img
+                src="../../imgs/food/sandwich.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Sandwich</h5>
+                <ul class="card-text">
+                  <li>Tosts</li>
+                  <li>Tomatoes</li>
+                  <li>Сabbage leaf</li>
+                  <li>Сucumber</li>
+                  <li>Chicken</li>
+                  <li>BBQ Souce</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="sandwich">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="sandwich"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="burger"
+              data-product-name="Burger with fries"
+            >
+              <img
+                src="../../imgs/food/burger.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Burger with fries</h5>
+                <ul class="card-text">
+                  <li>Beef cutlet</li>
+                  <li>Сabbage leaf</li>
+                  <li>Tomatoes</li>
+                  <li>Cheese</li>
+                  <li>BBQ Souce</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="burger"> Price: --- </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="burger"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="desserts_container list-group-item">
+        <label for="show_prod_btn3">Desserts</label>
+        <button class="show_prod_btn" id="show_prod_btn3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-down"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </button>
+        <ul class="child-list-group open">
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="croissant"
+              data-product-name="Сroissant"
+            >
+              <img
+                src="../../imgs/food/croissant.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Сroissant</h5>
+                <ul class="card-text">
+                  <li>Cream souce</li>
+                  <li>Raspberry</li>
+                  <li>Raspberry chocolate</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="croissant">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="croissant"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="mini_cheesecakes"
+              data-product-name="Сheesecakes with sour cream"
+            >
+              <img
+                src="../../imgs/food/mini_cheesecakes.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Сheesecakes with sour cream</h5>
+                <ul class="card-text">
+                  <li>Сheesecakes</li>
+                  <li>Strawberry</li>
+                  <li>Cream souce</li>
+                  <li>Powdered sugar</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="mini_cheesecakes">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="mini_cheesecakes"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div
+              class="card"
+              style="width: 18rem"
+              data-product-id="cheesecake"
+              data-product-name="Сheesecake"
+            >
+              <img
+                src="../../imgs/food/cheesecake.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Сheesecake</h5>
+                <ul class="card-text">
+                  <li>Сheesecake</li>
+                  <li>Strawberry</li>
+                  <li>Powdered sugar</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price" data-product-id="cheesecake">
+                  Price: ---
+                </span>
+                <button
+                  class="order_btn btn btn-primary"
+                  id="order_editor"
+                  data-product-id="cheesecake"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-basket"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li id="order_edit_modal">
+        <form
+          class="order_editing_conteiner"
+          action="no-action"
+          id="form_editor"
+        >
+          <img id="product_img" class="card-img-top" alt="product img" />
+          <p class="editor_product_name"></p>
+          <fieldset>
+            <label for="big_size"
+              >Big Size
+              <input
+                class="size_input"
+                type="radio"
+                id="big_size"
+                name="size"
+                value="2"
+                required
+              />
+            </label>
+            <label for="standart_size"
+              >Standart Size
+              <input
+                class="size_input"
+                type="radio"
+                id="standart_size"
+                name="size"
+                value="1"
+                checked
+              />
+            </label>
+          </fieldset>
+          <label for="stuffing-additor" id="stuffing_select"
+            >Add some stuffing:<br />
+            <select name="stuffing" id="stuffing-additor" required>
+              <optgroup label="Drinks"></optgroup>
+              <option value="" selected>None</option>
+              <option value="doubleEspresso">Double espresso</option>
+              <option value="orangeFresh">Orange fresh</option>
+              <option value="caramelSyrup">Caramel syrup</option>
+              <option value="crushedIce">Crushed ice</option>
+              <option value="whiteRum">White rum Cubana Cultura</option>
+              <option value="soda">Soda</option>
+              <option value="espresso">Espresso</option>
+              <option value="foam">Foam</option>
+              <hr />
+              <optgroup label="Food"></optgroup>
+              <option value="lime">Lime</option>
+              <option value="strawberry">Strawberry</option>
+              <option value="mint">Min</option>
+              <option value="eggs">Eggs</option>
+              <option value="tosts">Tosts</option>
+              <option value="avocado">Avocado</option>
+              <option value="spinach">Spinach</option>
+              <option value="bacon">Bacon</option>
+              <option value="sauce">Sauce</option>
+              <option value="tomatoes">Tomatoes</option>
+              <option value="cabbageLeaf">Сabbage leaf</option>
+              <option value="cucumber">Сucumber</option>
+              <option value="chicken">Chicken</option>
+              <option value="BBQSouce">BBQ Souce</option>
+              <option value="beefCutlet">Beef cutlet</option>
+              <option value="cheese">Cheese</option>
+              <option value="creamSouce">Cream souce</option>
+              <option value="raspberry">Raspberry</option>
+              <option value="raspberryChocolate">Raspberry chocolate</option>
+              <option value="miniСheesecake">Mini cheesecake</option>
+              <option value="powderedSugar">Powdered sugar</option>
+              <option value="cheesecake">Сheesecake</option>
+              <option value="halfStrawberry">Strawberry</option>
+            </select>
+            <button type="button" class="btn btn-primary" id="add_stuffing_btn">
+              +
+            </button>
+          </label>
+          <ul class="editing_order"></ul>
+          <button id="close_editor_btn" type="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+              />
+            </svg>
+          </button>
+        </form>
+      </li>
+    </ul>
+    <script src="../BS/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../moment/node_modules/moment/min/moment.min.js"></script>
+  </body>
+</html>
