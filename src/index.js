@@ -66,7 +66,7 @@ editORderBtn.forEach((element) => {
     const addBtn = document.createElement("button");
     const spanForPrice = document.createElement("span");
 
-    img.setAttribute("src", `../../imgs/food/${productId}.jpg`);
+    img.setAttribute("src", `./imgs/food/${productId}.jpg`);
     spanForPrice.setAttribute("id", "editing_prise");
     spanForPrice.setAttribute("class", "price");
 
@@ -195,7 +195,7 @@ function addOrderToCart() {
       );
       const productName = currentProducrCard[0].dataset.productName;
 
-      img.setAttribute("src", `../../imgs/food/${productId}.jpg`);
+      img.setAttribute("src", `./imgs/food/${productId}.jpg`);
       delOrderBtn.setAttribute("id", "del_order_btn");
       delOrderBtn.innerText = "Delete order";
       delOrderBtn.dataset.orderId = kej.orderId;
